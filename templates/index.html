@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8">
+	<style>
+		div{
+			text-align: center;
+		}
+		
+	</style>
+</head>
+<body>
+	<div >
+		{%block content%}
+		{%if user.is_authenticated%}
+		<form action="word">
+			<p><input type="text" name="word"  placeholder="Search for a word">
+				<button type="submit">submit</button></p>
+		</form>
+		<a href="{%url 'logout' %}"> Log Out</a>
+		<form method="post">
+		{%else%}
+			<p><a href="{%url 'login' %}"> Log In</a></p>
+			<p><a href="{%url 'newaccount' %}"> Create New Account</a></p>
+		{%endif%}
+		{%endblock%}
+	</div>
+
+    
+</body>
+</html>

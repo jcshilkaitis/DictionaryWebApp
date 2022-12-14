@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create a new account</title>
+    <meta charset="UTF-8">
+	<style>
+		div{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	{% block content %}
+     <form method="post">
+	 {%csrf_token %}
+      {{form.as_p}}
+      <button type="submit">Create New Account</button>
+    </form>
+	{% endblock %}
+	<p><a href="{%url 'login' %}">Return to login</a></p>
+    
+</body>
+</html>
